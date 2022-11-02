@@ -40,25 +40,25 @@ class Player:
 
 
         
-        # if choice1 == self.move_list[0]:
-        #     if choice == self.move_list[2] or choice1 == self.move_list[3]:
-        #         winner_p2 +=1
+        if choice1 == self.move_list[0]:
+            if choice == self.move_list[2] or choice1 == self.move_list[3]:
+                winner_p2 +=1
             
-        # elif choice1 == self.move_list[1]:
-        #     if choice == self.move_list[2] or choice1 == self.move_list[4]:
-        #         winner_p2 +=1
+        elif choice1 == self.move_list[1]:
+            if choice == self.move_list[2] or choice1 == self.move_list[4]:
+                winner_p2 +=1
            
-        # elif choice1 == self.move_list[2]:
-        #     if choice == self.move_list[1] or choice1 == self.move_list[3]:
-        #         winner_p2 +=1
+        elif choice1 == self.move_list[2]:
+            if choice == self.move_list[1] or choice1 == self.move_list[3]:
+                winner_p2 +=1
         
-        # elif choice1 == self.move_list[3]:
-        #     if choice == self.move_list[4] or choice1 == self.move_list[2]:
-        #         winner_p2 +=1
+        elif choice1 == self.move_list[3]:
+            if choice == self.move_list[4] or choice1 == self.move_list[2]:
+                winner_p2 +=1
         
-        # elif choice1 == self.move_list[4]:
-        #     if choice == self.move_list[2] or choice1 == self.move_list[0]:
-        #         winner_p2 +=1
+        elif choice1 == self.move_list[4]:
+            if choice == self.move_list[2] or choice1 == self.move_list[0]:
+                winner_p2 +=1
         
         
         else:

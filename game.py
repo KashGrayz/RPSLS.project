@@ -6,7 +6,7 @@ from time import sleep
 
 human_1 = Human()
 human_2 = Human()
-computer_1 = AI()
+ai_1 = AI()
 
 class Game:
 
@@ -41,30 +41,30 @@ Spock vaporizes Rock'''
     return number_of_players
 
 
-#    def play_game(self, number_of_players):
+   def play_game(self, number_of_players):
       
-#       if number_of_players == "single":
-#         while human_1_wins < 2 or human_2_wins < 2:
-#          self.human.make_choice
-#          human_1_wins = self.human_1.wins
-#          human_2_wins = self.huamn_2.wins
+      if number_of_players == "single":
+        while human_1.wins < 2 or human_2.wins < 2:
+         self.human.make_choice
+        #  human_1_wins = self.human_1.wins
+        #  human_2_wins = self.huamn_2.wins
 
          
-#         pass
+        pass
 
 
 
-#       elif number_of_players == "multi":
-#         while human_wins < 2 or ai_wins < 2:
-#          self.ai.make_choice
-#          human_wins = self.human.wins
-#          ai_wins = self.ai.wins
+      elif number_of_players == "multi":
+        while human_1.wins < 2 or ai_1.wins < 2:
+         ai_1.make_choice
+        #  human_1.wins = self.human.wins
+        #  ai_wins = self.ai.wins
          
          
-#         pass
+        pass
 
-#       else: 
-#          print("\nI'm sorry, I didn't understand that message!\n")
+      else: 
+         print("\nI'm sorry, I didn't understand that message!\n")
     
     
       
