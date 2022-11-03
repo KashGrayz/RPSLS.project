@@ -11,7 +11,7 @@ class Player:
 
         #determines winner of each round
     def make_choice(self):
-        weapon = input(f"{self.name}, please choose a weapon.\n")
+        weapon = input(f"{self.name}, please choose a move: Rock, Paper, Scissors, Lizard, Spock\n")
         return weapon
       
     

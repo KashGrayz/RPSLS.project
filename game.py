@@ -4,7 +4,7 @@ from ai import AI
 from player import Player
 from time import sleep
 
-from playsound import playsound
+#from playsound import playsound
 
 human_1 = Human()
 human_2 = Human()
@@ -47,12 +47,11 @@ class Game:
 
       print('\nWelcome to Rock Paper Scissors Lizard Spock!\n')
       sleep(1)
-      number_of_players = input('''
-      \nHow many players would you like to have? (single/multi). 
-      We're playing best out of three, so first to two wins!\n''')
+      number_of_players = input('\nHow would you like to play? (single/multi).\n')
       sleep(1)
       print(f"{self.rules}")
       sleep(1)
+      print("\nWe're playing best out of three, so first to two wins!\n")
       return number_of_players
 
 
@@ -64,6 +63,7 @@ class Game:
          
          while human_1.wins or human_2.wins < 2:
             choice = human_1.make_choice()
+            print('\n')
             while choice not in human_1.move_list:
                print("I'm sorry, I didn't understand that message!")
                choice = human_1.make_choice()
@@ -90,48 +90,108 @@ class Game:
 
             ## Human 1 Wins
 
-                  #Rock vs either Scissors or Lizard
+                  #Rock vs Scissors or Lizard
             elif choice == human_1.move_list[0]:
                if choice1 == human_2.move_list[2] or choice1 == human_2.move_list[3]:
                   human_1.wins += 1
-                    # if choice1 == human_2.move_list[2]:
+                  if choice1 == human_2.move_list[2]:
+                     print('\nRock crushes Scissors')
+                     print(f'{human_1.name} Wins!')
+                  elif choice1 == human_2.move_list[3]:
+                     print('\nRock crushes Lizard')
+                     print(f'{human_1.name} Wins!')
 
                   #Paper vs Scissors or Spock     
             elif choice == human_1.move_list[1]:
                if choice1 == human_2.move_list[0] or choice1 == human_2.move_list[4]:
                   human_1.wins += 1
-                  #Paper vs Scissors or Spock
+                  if choice1 == human_2.move_list[0]:
+                     print('\nScissors cuts Paper')
+                     print(f'{human_1.name} Wins!')
+                  elif choice1 == human_2.move_list[4]:
+                     print('\nSpock smashes Scissors')
+                     print(f'{human_1.name} Wins!')
+
+                  #Scissors vs Paper or Lizard
             elif choice == human_1.move_list[2]:
                if choice1 == human_2.move_list[1] or choice1 == human_2.move_list[3]:
                   human_1.wins += 1
-                  #Lizard vs Spock or Scissors
+                  if choice1 == human_2.move_list[1]:
+                     print('\nScissors cuts Paper')
+                     print(f'{human_1.name} Wins!')
+                  elif choice1 == human_2.move_list[3]:
+                     print('\nScissors decapitates Lizard')
+                     print(f'{human_1.name} Wins!')
+                  
+                  #Lizard vs Spock or Paper
             elif choice == human_1.move_list[3]:
-               if choice1 == human_2.move_list[4] or choice1 == human_2.move_list[2]:
+               if choice1 == human_2.move_list[4] or choice1 == human_2.move_list[1]:
                   human_1.wins += 1
+                  if choice1 == human_2.move_list[4]:
+                     print('\nLizard poisons Spock')
+                     print(f'{human_1.name} Wins!')
+                  elif choice1 == human_2.move_list[1]:
+                     print('\nLizard eats Paper')
+                     print(f'{human_1.name} Wins!')
+
                    #Spock vs Scissors or Rock
             elif choice == human_1.move_list[4]:
                if choice1 == human_2.move_list[2] or choice1 == human_2.move_list[0]:
                   human_1.wins += 1
+                  if choice1 == human_2.move_list[2]:
+                     print('\nSpock smashes Scissors')
+                     print(f'{human_1.name} Wins!')
+                  elif choice1 == human_2.move_list[0]:
+                     print('\nSpock vaporizes Rock')
+                     print(f'{human_1.name} Wins!')
 
             ## Human 2 Wins
 
-                     #Rock vs either Scissors or Lizard
+                  #Rock vs either Scissors or Lizard
             if choice1 == human_2.move_list[0]:
                if choice == human_1.move_list[2] or choice == human_1.move_list[3]:
                   human_2.wins += 1
-                  #paper covers rock, disproves spock
+                  if choice == human_1.move_list[2]:
+                     print('\nRock crushes Scissors')
+                     print(f'\n{human_2.name} Wins!')
+                  elif choice == human_1.move_list[3]:
+                     print('\nRock crushes Lizard')
+                     print(f'\n{human_2.name} Wins!')
+
+                  #Paper vs Scissors or Spock
             elif choice1 == human_2.move_list[1]:
                if choice == human_1.move_list[0] or choice == human_1.move_list[4]:
                   human_2.wins += 1
-               
+                  if choice == human_1.move_list[0]:
+                     print('\nPaper covers Rock')
+                     print(f'\n{human_2.name} Wins!')
+                  elif choice == human_1.move_list[4]:
+                     print('\nPaper disproves Spock')
+                     print(f'\n{human_2.name} Wins!')
+
+                  #Scissors vs Paper or Lizard
             elif choice1 == human_2.move_list[2]:
                if choice == human_1.move_list[1] or choice == human_1.move_list[3]:
                   human_2.wins += 1
-            
+                  if choice == human_1.move_list[1]:
+                     print('\nScissors cuts Paper')
+                     print(f'\n{human_2.name} Wins!')
+                  elif choice == human_1.move_list[3]:
+                     print('\nScissors decapitates Lizard')
+                     print(f'\n{human_2.name} Wins!')
+
+                  #Lizard vs Spock or Paper
             elif choice1 == human_2.move_list[3]:
                if choice == human_1.move_list[4] or choice == human_1.move_list[2]:
                   human_2.wins += 1
-            
+                  if choice == human_1.move_list[4]:
+                     print('\nSpock vaporizes Rock')
+                     print(f'\n{human_2.name} Wins!')
+                  elif choice == human_1.move_list[2]:
+                     print('\nLizard eats Paper')
+                     print(f'\n{human_2.name} Wins!')
+
+                  #Spock vs Scissors or Rock
             elif choice1 == human_2.move_list[4]:
                if choice == human_1.move_list[2] or choice == human_1.move_list[0]:
                   human_2.wins += 1
@@ -167,6 +227,7 @@ class Game:
                choice1 = human_1.make_choice()
 
             ai_choice = ai_1.make_choice()
+            
             
             if ai_1.move_list[ai_choice] == choice1:
                print(f'You both choose {choice1}')
@@ -207,17 +268,16 @@ class Game:
                      print('\nScissors decapitates Lizard\n')
                      print(f'\n{ai_1.name} Wins!!')
                   
-            
-                  #Lizard vs Spock or Scissors
+                  #Lizard vs Spock or Paper
             elif ai_1.move_list[ai_choice] == ai_1.move_list[3]:
 
-               if choice1 == human_1.move_list[4] or choice1 == human_1.move_list[2]:
+               if choice1 == human_1.move_list[4] or choice1 == human_1.move_list[1]:
                   ai_1.wins +=1
                   if choice1 == human_1.move_list[4]:
                      print('\nLizard poisons Spock\n')
                      print(f'\n{ai_1.name} Wins!!')
-                  elif choice1 == human_1.move_list[2]:
-                     print('\nScissors decapitates Lizard\n')
+                  elif choice1 == human_1.move_list[1]:
+                     print('\nLizard eats Paper\n')
                      print(f'\n{ai_1.name} Wins!!')
             
                   #Spock vs Scissors or Rock
@@ -268,15 +328,15 @@ class Game:
                      print(f'\n{human_1.name} Wins!!')
 
                   
-                  #Lizard vs Spock or Scissors
+                  #Lizard vs Spock or Paper
             elif choice1 == human_1.move_list[3]:
-               if ai_1.move_list[ai_choice] == ai_1.move_list[4] or choice1 == ai_1.move_list[2]:
+               if ai_1.move_list[ai_choice] == ai_1.move_list[4] or choice1 == ai_1.move_list[1]:
                   human_1.wins +=1
                   if ai_1.move_list[ai_choice] == ai_1.move_list[4]:
                      print('\nLizard poisons Spock\n')
                      print(f'\n{human_1.name} Wins!!')
-                  elif choice1 == ai_1.move_list[2]:
-                     print('\nScissors decapitates Lizard\n')
+                  elif choice1 == ai_1.move_list[1]:
+                     print('\nLizard eats Paper\n')
                      print(f'\n{human_1.name} Wins!!')
 
                   
@@ -307,7 +367,7 @@ class Game:
 
    def win_game(self, winner):
       print(f"Congratulations to {winner}!")
-      playsound('./for_final_win.wav')
+      #playsound('./for_final_win.wav')
       # sleep(1)
       answer = input("Would you like to play again? (y/n)")
       return answer
