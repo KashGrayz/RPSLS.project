@@ -10,3 +10,20 @@ NOTE: Do not use a Gesture class until you have reached MVP for all user stories
 (10 points): As a player, I want the correct player to win a given round based on the choices made by each player.  See below for game rules!
 (10 points): As a player, I want the game of RPSLS to be at minimum a “best of three” to decide a winner. 
 (10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs human) game.
+
+Explanation of game rules:
+
+["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+
+    Rock crushes Scissors
+    Scissors cuts Paper 
+    Paper covers Rock
+    Rock crushes Lizard
+    Lizard poisons Spock
+    Spock smashes Scissors
+    Scissors decapitates Lizard
+    Lizard eats Paper
+    Paper disproves Spock
+    Spock vaporizes Rock
+
+    
