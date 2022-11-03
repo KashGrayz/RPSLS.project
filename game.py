@@ -4,6 +4,8 @@ from ai import AI
 from player import Player
 from time import sleep
 
+from playsound import playsound
+
 human_1 = Human()
 human_2 = Human()
 human_1.name = "Player 1"
@@ -27,7 +29,7 @@ Spock vaporizes Rock'''
      
 
    def run_game(self):
-
+      
       player_number = self.display_welcome()
       winner = self.play_game(player_number)
       answer = self.win_game(winner)
@@ -209,6 +211,7 @@ Spock vaporizes Rock'''
       
 
    def win_game(self, winner):
+      playsound('./winbrass.wav')
       print(f"Congratulations to {winner}!")
       sleep(1)
       answer = input("Would you like to play again? (y/n)")
