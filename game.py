@@ -4,6 +4,8 @@ from ai import AI
 from player import Player
 from time import sleep
 
+from playsound import playsound
+
 human_1 = Human()
 human_2 = Human()
 human_1.name = "Player 1"
@@ -42,16 +44,17 @@ class Game:
 
 
    def display_welcome(self):
-    print('\nWelcome to Rock Paper Scissors Spock!\n')
-    sleep(1)
-    number_of_players = input('\nHow many players would you like to have? (single/multi).\n')
-    sleep(1)
-    print(f"{self.rules}")
-    sleep(1)
-    print("\nWe're playing best out of three, so first to two wins!\n")
-    print('\n')
-    sleep(1)
-    return number_of_players
+      playsound('./winbrass.wav')
+
+      print('\nWelcome to Rock Paper Scissors Spock!\n')
+      sleep(1)
+      number_of_players = input('''
+      \nHow many players would you like to have? (single/multi). 
+      We're playing best out of three, so first to two wins!\n''')
+      sleep(1)
+      print(f"{self.rules}")
+      sleep(1)
+      return number_of_players
 
 
    def play_game(self, number_of_players):
@@ -280,6 +283,7 @@ class Game:
       
 
    def win_game(self, winner):
+      playsound('./winbrass.wav')
       print(f"Congratulations to {winner}!")
       sleep(1)
       answer = input("Would you like to play again? (y/n)")
