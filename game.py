@@ -44,11 +44,12 @@ class Game:
    def display_welcome(self):
     print('\nWelcome to Rock Paper Scissors Spock!\n')
     sleep(1)
-    number_of_players = input('''
-    \nHow many players would you like to have? (single/multi). 
-    We're playing best out of three, so first to two wins!\n''')
+    number_of_players = input('\nHow many players would you like to have? (single/multi).\n')
     sleep(1)
     print(f"{self.rules}")
+    sleep(1)
+    print("\nWe're playing best out of three, so first to two wins!\n")
+    print('\n')
     sleep(1)
     return number_of_players
 
@@ -83,7 +84,7 @@ class Game:
                   if choice1 == human_2.move_list[2] or choice1 == human_2.move_list[3]:
                      human_1.wins += 1
                     # if choice1 == human_2.move_list[2]:
-                    
+
                   #Paper vs Scissors or Spock     
             elif choice == human_1.move_list[1]:
                   if choice1 == human_2.move_list[2] or choice1 == human_2.move_list[4]:
