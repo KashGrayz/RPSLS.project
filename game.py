@@ -4,7 +4,7 @@ from ai import AI
 from player import Player
 from time import sleep
 
-#from playsound import playsound
+from playsound import playsound
 
 human_1 = Human()
 human_2 = Human()
@@ -43,7 +43,6 @@ class Game:
 
 
    def display_welcome(self):
-      #playsound('./winbrass.wav')
 
       print('\nWelcome to Rock Paper Scissors Lizard Spock!\n')
       sleep(1)
@@ -367,7 +366,7 @@ class Game:
 
    def win_game(self, winner):
       print(f"Congratulations to {winner}!")
-      #playsound('./for_final_win.wav')
+      playsound('./for_final_win.wav')
       # sleep(1)
       answer = input("Would you like to play again? (y/n)")
       return answer
